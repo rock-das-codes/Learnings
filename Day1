@@ -1,0 +1,27 @@
+I couldnot solve this js extension problemin the first round only : 
+to implement groupBy
+Array.prototype.groupBy = function(keySelector){
+    if(this==null || this.length===0) return {};
+    const groups={};
+    for(let i=0;i<this.length;i++){
+        const items = this[i];
+        let key;
+        if(items===null || items===undefined){
+            key = 'null'
+        }
+        else{
+            key = keySelector(items);
+        }
+        if(!groups[key]){
+            groups[key]=[];
+        }
+        groups[key].push(items);
+    }
+    return groups;
+    }
+
+
+
+
+
+
