@@ -1,0 +1,38 @@
+implemented countBY
+Array.prototype.groupBy = function(keyselector){
+    if(this.length==0) return {}
+    let group ={}
+    for(let i=0;i<this.length;i++){
+        let item = this[i]
+        let key;
+        if(item==null || item == undefined){
+            key= null
+        }
+        else{
+            key = keyselector(item)
+        }
+        if(!group[key]){
+            group[key]=1
+        }
+        else{
+            group[key]++
+        }
+    }
+    return group
+}
+
+const people = [
+  { name: 'Alice', age: 23 },
+  { name: 'Bob', age: 30 },
+  { name: 'Charlie', age: 23 },
+  { name: 'David', age: 30 },
+  { name: 'Eve', age: 35 },
+  null,
+  undefined
+];
+
+const ages = [15, 20, 17, 21, 18];
+const result = ages.groupBy(age => age >= 18 ? "adult" : "minor");
+const words = ["cat", "dog", "cat", "dog", "dog"];
+const result2 = words.groupBy(w => w);
+console.log(result)
