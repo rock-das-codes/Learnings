@@ -1,0 +1,7 @@
+file based routing vs old routing:
+file based is better because it introduces layouts
+
+
+interface ve types
+interface can be edited again becase typescript will merge the previous values with new ones
+
